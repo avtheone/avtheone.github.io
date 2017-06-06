@@ -144,7 +144,6 @@ $contactForm.submit(function(e) {
 		url: '//formspree.io/your@email.com',
 		method: 'POST',
 		data: $(this).serialize(),
-		data: {message: "Спасибо!"},
 		dataType: 'json',
 		beforeSend: function() {
 			$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
