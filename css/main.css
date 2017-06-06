@@ -110,6 +110,9 @@ body .tab_item:first-child {
     top: 50%;
     position: absolute; }
 
+.loader .loader_inner {
+  background-image: url("../../img/preloader.gif"); }
+
 .top_phone .wrapper .tab,
 .bottom_phone .wrapper .tab {
   text-transform: uppercase;
