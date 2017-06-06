@@ -599,17 +599,17 @@
 		<!-- Main Popup Form End -->
 
 		<!-- Callback Popup Form Start -->
-		<form id="form-back" action="https://formspree.io/avtheone1@gmail.com" method="post">
+		<form id="form_back" action="https://formspree.io/avtheone1@gmail.com" method="post">
 			<h2>Заказать звонок</h2>
 			<label>
 				<span>Ваше имя:</span>
-				<input type="text" name="Name" placeholder="Name" required>
+				<input type="text" name="name" required />
 				<span class="form_error">
 					Это поле обязательно к заполнению</span>
 			</label>
 			<label>
 				<span>Ваш телефон:</span>
-				<input type="text" name="Phone" placeholder="Phone" required>
+				<input type="text" name="phone" required />
 				<span class="form_error">
 					Это поле обязательно к заполнению</span>
 			</label>
@@ -653,7 +653,7 @@
         loop: true,
     });
 
-    var $contactForm = $('#form-back');
+    var $contactForm = $('#form_back');
 		$contactForm.submit(function(e) {
 			e.preventDefault();
 			$.ajax({
