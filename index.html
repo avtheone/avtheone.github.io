@@ -135,7 +135,7 @@
 								</div>
 
 								<div class="button_wrap">
-									<a href="#form_back" class="button btn_red popup_c">Начать обучение</a>
+									<a href="#start_form" class="button btn_red popup_c">Начать обучение</a>
 								</div>
 
 							</div>
@@ -291,7 +291,7 @@
 						<div class="col-md-4">
 
 							<!-- Contact Form Start -->
-							<form id="form_back" action="https://formspree.io/avtheone1@gmail.com" method="POST">
+							<form id="open_form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
 								<h2>Связаться с нами</h2>
 								<label>
 									<span>Ваше имя:</span>
@@ -425,7 +425,7 @@
 
 				<div class="col-md-12">
 					<h3>Изучение английского языка с English Centre - это оптимальное сочетание интенсива и углубленного подхода.</h3>
-					<a href="#form_back" class="button btn_white popup_c">Отправить заявку</a>
+					<a href="#hidden_form" class="button btn_white popup_c">Отправить заявку</a>
 				</div>
 
 			</div>
@@ -526,8 +526,43 @@
 	<!-- Hidden Elements Start -->
 	<div class="hidden">
 
+		<!-- Start Learning Form Start -->
+		<form id="start_form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
+			<h2>Связаться с нами</h2>
+			<label>
+				<span>Ваше имя:</span>
+				<input type="text" name="name" required />
+				<span class="form_error">
+					Это поле обязательно к заполнению</span>
+			</label>
+			<label>
+				<span>Ваш телефон:</span>
+				<input type="text" name="phone" required />
+				<span class="form_error">
+					Это поле обязательно к заполнению</span>
+			</label>
+			<label>
+				<span>Программа обучения:</span>
+				<span class="label_select">
+					<select name="city">
+						<option>A1 - Beginner</option>
+						<option>A2 - Pre-Intermediate</option>
+						<option>B1 - Intermediate</option>
+						<option>B2 - Upper-Intermediate</option>
+						<option>C1 - Advanced</option>
+						<option>C2 - Proficiency</option>
+					</select>
+				</span>
+			</label>
+			<input type="hidden" name="info" value="Start Learning Form" />
+			<div class="button_wrap">
+				<button type="submit" class="button btn_green">Отправить заявку</button>
+			</div>
+		</form>
+		<!-- Start Learning Form End -->
+
 		<!-- Main Popup Form Start -->
-		<form id="form_back" action="https://formspree.io/avtheone1@gmail.com" method="POST">
+		<form id="hidden_form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
 			<h2>Связаться с нами</h2>
 			<label>
 				<span>Ваше имя:</span>
@@ -556,6 +591,29 @@
 			</div>
 		</form>
 		<!-- Main Popup Form End -->
+
+		<!-- Callback Popup Form Start -->
+		<form id="form_back" action="https://formspree.io/avtheone1@gmail.com" method="post">
+			<h2>Заказать звонок</h2>
+			<label>
+				<span>Ваше имя:</span>
+				<input type="text" name="name" required />
+				<span class="form_error">
+					Это поле обязательно к заполнению</span>
+			</label>
+			<label>
+				<span>Ваш телефон:</span>
+				<input type="text" name="phone" required />
+				<span class="form_error">
+					Это поле обязательно к заполнению</span>
+			</label>
+			<input type="hidden" name="info" value="Request a Call form">
+			<div class="button_wrap">
+				<button type="submit" class="button btn_green">Отправить заявку</button>
+			</div>
+		</form>
+</form>
+		<!-- Callback Popup Form End -->
 
 	</div>
 	<!-- Hidden Elements End -->
@@ -588,6 +646,60 @@
         speed: 600,
         loop: true,
     });
+
+    var $contactForm = $('#start_form');
+	$contactForm.submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/avtheone1@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			}).done(function() {
+			alert("Спасибо!");
+			setTimeout(function() {
+				var magnificPopup = $.magnificPopup.instance; 
+				magnificPopup.close();
+				ths.trigger("reset");
+			}, 1000);
+		});
+	});
+
+    var $contactForm = $('#open_form');
+	$contactForm.submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/avtheone1@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			}).done(function() {
+			alert("Спасибо!");
+			setTimeout(function() {
+				var magnificPopup = $.magnificPopup.instance; 
+				magnificPopup.close();
+				ths.trigger("reset");
+			}, 1000);
+		});
+	});
+
+    var $contactForm = $('#hidden_form');
+	$contactForm.submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/avtheone1@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			}).done(function() {
+			alert("Спасибо!");
+			setTimeout(function() {
+				var magnificPopup = $.magnificPopup.instance; 
+				magnificPopup.close();
+				ths.trigger("reset");
+			}, 1000);
+		});
+	});
 
     var $contactForm = $('#form_back');
 	$contactForm.submit(function(e) {
