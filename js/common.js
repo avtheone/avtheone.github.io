@@ -145,16 +145,12 @@ var $contactForm = $('#form_back');
 			method: 'POST',
 			data: $(this).serialize(),
 			dataType: 'json',
-			beforeSend: function() {
-				$contactForm.append('<div class="alert alert--loading">Отправка заявки…</div>');
-			},
-			success: function(data) {
-				$contactForm.find('.alert--loading').hide();
-				$contactForm.append('<div class="alert alert--success">Заявка отправлена!</div>');
-			},
-			error: function(err) {
-				$contactForm.find('.alert--loading').hide();
-				$contactForm.append('<div class="alert alert--error">Упс, произошла ошибка.</div>');
-			}
+			}).done(function() {
+			alert("Спасибо!");
+			setTimeout(function() {
+				var magnificPopup = $.magnificPopup.instance; 
+				magnificPopup.close();
+				ths.trigger("reset");
+			}, 1000);
 		});
 });
