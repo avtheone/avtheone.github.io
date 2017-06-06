@@ -136,3 +136,25 @@ $(window).load(function() {
 	$("section h2, footer h2, .contacts_top .tabs").animated("fadeInUp", "fadeOut");
 
 });
+
+var $contactForm = $('#form_back');
+	$contactForm.submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/avtheone1@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			beforeSend: function() {
+				$contactForm.append('<div class="alert alert--loading">Отправка заявки…</div>');
+			},
+			success: function(data) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--success">Заявка отправлена!</div>');
+			},
+			error: function(err) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--error">Упс, произошла ошибка.</div>');
+			}
+		});
+});
