@@ -291,7 +291,7 @@
 						<div class="col-md-4">
 
 							<!-- Contact Form Start -->
-							<form id="contact-form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
+							<form id="open_form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
 								<h2>Связаться с нами</h2>
 								<label>
 									<span>Ваше имя:</span>
@@ -527,7 +527,7 @@
 	<div class="hidden">
 
 		<!-- Start Learning Form Start -->
-		<form id="contact-form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
+		<form id="start_form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
 			<h2>Связаться с нами</h2>
 			<label>
 				<span>Ваша фамилия:</span>
@@ -568,7 +568,7 @@
 		<!-- Start Learning Form End -->
 
 		<!-- Main Popup Form Start -->
-		<form id="contact-form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
+		<form id="hidden_form" action="https://formspree.io/avtheone1@gmail.com" method="POST">
 			<h2>Связаться с нами</h2>
 			<label>
 				<span>Ваше имя:</span>
@@ -599,7 +599,7 @@
 		<!-- Main Popup Form End -->
 
 		<!-- Callback Popup Form Start -->
-		<form id="contact-form" action="https://formspree.io/avtheone1@gmail.com" method="post">
+		<form id="form_back" action="https://formspree.io/avtheone1@gmail.com" method="post">
 			<h2>Заказать звонок</h2>
 			<label>
 				<span>Ваше имя:</span>
@@ -652,28 +652,6 @@
         speed: 600,
         loop: true,
     });
-    
-var $contactForm = $('#contact-form');
-$contactForm.submit(function(e) {
-	e.preventDefault();
-	$.ajax({
-		url: '//formspree.io/your@email.com',
-		method: 'POST',
-		data: $(this).serialize(),
-		dataType: 'json',
-		beforeSend: function() {
-			$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
-		},
-		success: function(data) {
-			$contactForm.find('.alert--loading').hide();
-			$contactForm.append('<div class="alert alert--success">Message sent!</div>');
-		},
-		error: function(err) {
-			$contactForm.find('.alert--loading').hide();
-			$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
-		}
-	});
-});
     </script>
 </body>
 </html>

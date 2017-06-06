@@ -136,3 +136,91 @@ $(window).load(function() {
 	$("section h2, footer h2, .contacts_top .tabs").animated("fadeInUp", "fadeOut");
 
 });
+
+var $contactForm = $('#start_form');
+	$contactForm.submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/avtheone1@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			beforeSend: function() {
+				$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+			},
+			success: function(data) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--success">Message sent!</div>');
+			},
+			error: function(err) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
+			}
+		});
+});
+
+var $contactForm = $('#open_form');
+	$contactForm.submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/avtheone1@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			beforeSend: function() {
+				$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+			},
+			success: function(data) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--success">Message sent!</div>');
+			},
+			error: function(err) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
+			}
+		});
+});
+
+var $contactForm = $('#hidden_form');
+	$contactForm.submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/avtheone1@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			beforeSend: function() {
+				$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+			},
+			success: function(data) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--success">Message sent!</div>');
+			},
+			error: function(err) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
+			}
+		});
+});
+
+var $contactForm = $('#form_back');
+	$contactForm.submit(function(e) {
+		e.preventDefault();
+		$.ajax({
+			url: '//formspree.io/avtheone1@gmail.com',
+			method: 'POST',
+			data: $(this).serialize(),
+			dataType: 'json',
+			beforeSend: function() {
+				$contactForm.append('<div class="alert alert--loading">Sending message…</div>');
+			},
+			success: function(data) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--success">Message sent!</div>');
+			},
+			error: function(err) {
+				$contactForm.find('.alert--loading').hide();
+				$contactForm.append('<div class="alert alert--error">Ops, there was an error.</div>');
+			}
+		});
+});
