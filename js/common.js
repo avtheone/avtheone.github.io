@@ -80,26 +80,6 @@ $(document).ready(function() {
 		return true;
 	}));
 
-	//Ajax Forms
-	//Documentation: http://api.jquery.com/jquery.ajax/
-	$("form").submit(function(e) {
-		var ths = $(this);
-		e.preventDefault;
-		$.ajax({
-			type: "POST",
-			url: "mail.php",
-			data: $(this).serialize()
-		}).done(function() {
-			alert("Спасибо!");
-			setTimeout(function() {
-				var magnificPopup = $.magnificPopup.instance; 
-				magnificPopup.close();
-				ths.trigger("reset");
-			}, 1000);
-		});
-		return false;
-	});
-
 	//Chrome Smooth Scroll
 	try {
 		$.browserSelector();
