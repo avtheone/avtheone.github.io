@@ -312,7 +312,7 @@
 										</select>
 									</span>
 								</label>
-								<input type="hidden" name="info" value="Write to us Form" />
+								<input type="hidden" name="info" value="Связаться с нами" />
 								<div class="button_wrap">
 									<button type="submit" class="button btn_green">Отправить заявку</button>
 								</div>
@@ -554,7 +554,7 @@
 					</select>
 				</span>
 			</label>
-			<input type="hidden" name="info" value="Start Learning Form" />
+			<input type="hidden" name="info" value="Начать обучение" />
 			<div class="button_wrap">
 				<button type="submit" class="button btn_green">Отправить заявку</button>
 			</div>
@@ -585,7 +585,7 @@
 					</select>
 				</span>
 			</label>
-			<input type="hidden" name="info" value="Submit a Request section under feedback" />
+			<input type="hidden" name="info" value="Оставить заявку" />
 			<div class="button_wrap">
 				<button type="submit" class="button btn_green">Отправить заявку</button>
 			</div>
@@ -607,7 +607,7 @@
 				<span class="form_error">
 					Это поле обязательно к заполнению</span>
 			</label>
-			<input type="hidden" name="info" value="Request a Call form">
+			<input type="hidden" name="info" value="Заказать звонок">
 			<div class="button_wrap">
 				<button type="submit" class="button btn_green">Отправить заявку</button>
 			</div>
@@ -646,78 +646,6 @@
         speed: 600,
         loop: true,
     });
-
-    var $contactForm = $('#start_form');
-	$contactForm.submit(function(e) {
-		e.preventDefault();
-		$.ajax({
-			url: '//formspree.io/avtheone1@gmail.com',
-			method: 'POST',
-			data: $(this).serialize(),
-			dataType: 'json',
-			}).done(function() {
-			alert("Спасибо!");
-			setTimeout(function() {
-				var magnificPopup = $.magnificPopup.instance; 
-				magnificPopup.close();
-				ths.trigger("reset");
-			}, 1000);
-		});
-	});
-
-    var $contactForm = $('#open_form');
-	$contactForm.submit(function(e) {
-		e.preventDefault();
-		$.ajax({
-			url: '//formspree.io/avtheone1@gmail.com',
-			method: 'POST',
-			data: $(this).serialize(),
-			dataType: 'json',
-			}).done(function() {
-			alert("Спасибо!");
-			setTimeout(function() {
-				var magnificPopup = $.magnificPopup.instance; 
-				magnificPopup.close();
-				ths.trigger("reset");
-			}, 1000);
-		});
-	});
-
-    var $contactForm = $('#hidden_form');
-	$contactForm.submit(function(e) {
-		e.preventDefault();
-		$.ajax({
-			url: '//formspree.io/avtheone1@gmail.com',
-			method: 'POST',
-			data: $(this).serialize(),
-			dataType: 'json',
-			}).done(function() {
-			alert("Спасибо!");
-			setTimeout(function() {
-				var magnificPopup = $.magnificPopup.instance; 
-				magnificPopup.close();
-				ths.trigger("reset");
-			}, 1000);
-		});
-	});
-
-    var $contactForm = $('#form_back');
-	$contactForm.submit(function(e) {
-		e.preventDefault();
-		$.ajax({
-			url: '//formspree.io/avtheone1@gmail.com',
-			method: 'POST',
-			data: $(this).serialize(),
-			dataType: 'json',
-			}).done(function() {
-			alert("Спасибо!");
-			setTimeout(function() {
-				var magnificPopup = $.magnificPopup.instance; 
-				magnificPopup.close();
-				ths.trigger("reset");
-			}, 1000);
-		});
-	});
     </script>
 </body>
 </html>
